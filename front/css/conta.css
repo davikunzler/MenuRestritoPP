@@ -1,0 +1,424 @@
+/* ===== Reset e estilo base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f1f8f4, #d9efe3);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #222;
+}
+
+/* ===== Cabeçalho ===== */
+header {
+  background: linear-gradient(90deg, #1B463B, #248515);
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+}
+
+.logo {
+  height: 80px;
+  width: auto;
+  border-radius: 100px;
+}
+
+/* ===== Botões de topo ===== */
+header .sair,
+header .excluir,
+header .editar {
+  position: absolute;
+  top: 20px;
+  padding: 10px 16px;
+  background-color: #1B463B;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  width: 130px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+header .sair:hover,
+header .excluir:hover,
+header .editar:hover {
+  background-color: #248515;
+  transform: translateY(-2px);
+}
+
+header .sair {
+  right: 20px;
+}
+
+header .excluir {
+  right: 180px;
+}
+
+header .editar {
+  right: 340px;
+}
+
+/* ===== Container principal ===== */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  gap: 25px;
+}
+.info-usuario {
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+}
+/* ===== Card de informações do usuário ===== */
+.card-usuario {
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 14px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.card-usuario h1 {
+  font-size: 22px;
+  color: #1B463B;
+  margin-bottom: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.card-usuario p {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.card-usuario strong {
+  color: #1B463B;
+}
+
+#descricao-estabelecimento {
+  margin-top: 12px;
+  padding: 14px;
+  background: #e9f5ec;
+  border: 1px solid #1B463B;
+  border-radius: 10px;
+  color: #1B463B;
+  font-size: 15px;
+  display: none;
+}
+
+/* ===== Botão cadastrar produto ===== */
+#btn-cadastrar-produto {
+  width: 100%;
+  max-width: 300px;
+  padding: 14px;
+  background: linear-gradient(90deg, #248515, #1B463B);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#btn-cadastrar-produto:hover {
+  background: #145134;
+  transform: translateY(-2px);
+}
+
+/* ===== Lista de produtos ===== */
+.avaliacoes {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 20px;
+  display: none;
+}
+
+.avaliacoes h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #1B463B;
+  text-align: center;
+}
+
+.avaliacao-item {
+  display: inline-block;
+  width: 180px;
+  margin: 10px;
+  background: linear-gradient(160deg, #248515, #1B463B);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+  color: #fff;
+}
+
+.avaliacao-item:hover {
+  transform: translateY(-3px);
+}
+
+.avaliacao-item img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.avaliacao-item p {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* ===== Rodapé ===== */
+footer {
+  background: linear-gradient(90deg, #248515, #1B463B);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+}
+
+footer .rodape {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+footer .icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* ===== Modal de Edição (Conta e Produto) ===== */
+#edit-modal,
+#modal-editar-produto {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease-out;
+  padding: 20px;
+}
+
+/* ===== Conteúdo dos Modais ===== */
+#edit-modal .modal-content,
+#modal-editar-produto .modal-content {
+  background: #fff;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 420px;
+  padding: 20px 25px;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+
+  /* 🔽 Tornar o modal mais controlado */
+  max-height: 85vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #1b463b #e5e5e5;
+}
+
+/* ===== Scrollbar ===== */
+#edit-modal .modal-content::-webkit-scrollbar,
+#modal-editar-produto .modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+#edit-modal .modal-content::-webkit-scrollbar-thumb,
+#modal-editar-produto .modal-content::-webkit-scrollbar-thumb {
+  background-color: #1b463b;
+  border-radius: 4px;
+}
+
+/* ===== Título ===== */
+#edit-modal h2,
+#modal-editar-produto h2 {
+  text-align: center;
+  margin-bottom: 16px;
+  color: #1b463b;
+}
+
+/* ===== Inputs ===== */
+#edit-modal label,
+#modal-editar-produto label {
+  display: block;
+  font-weight: bold;
+  color: #1b463b;
+  margin-bottom: 5px;
+}
+
+#edit-modal input,
+#edit-modal textarea,
+#edit-modal select,
+#modal-editar-produto input,
+#modal-editar-produto textarea,
+#modal-editar-produto select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+#edit-modal input:focus,
+#edit-modal textarea:focus,
+#edit-modal select:focus,
+#modal-editar-produto input:focus,
+#modal-editar-produto textarea:focus,
+#modal-editar-produto select:focus {
+  border-color: #248515;
+}
+
+/* ===== File input ===== */
+input[type="file"] {
+  border: none;
+  background-color: #f5f5f5;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input[type="file"]:hover {
+  background-color: #e9e9e9;
+}
+
+/* ===== Botões ===== */
+#edit-modal button,
+#modal-editar-produto button {
+  width: 100%;
+  background: linear-gradient(90deg, #248515, #1b463b);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 5px;
+}
+
+#edit-modal button:hover,
+#modal-editar-produto button:hover {
+  background: #145134;
+  transform: translateY(-2px);
+}
+
+/* ===== Fechar ===== */
+#edit-modal .close-btn,
+#modal-editar-produto .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+#edit-modal .close-btn:hover,
+#modal-editar-produto .close-btn:hover {
+  color: #248515;
+}
+
+/* ===== Botões de Produto ===== */
+.produto-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.produto-actions button {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Editar Produto */
+.produto-actions .editar-produto {
+  background: linear-gradient(90deg, #248515, #1b463b);
+}
+
+.produto-actions .editar-produto:hover {
+  background: #145134;
+  transform: translateY(-2px);
+}
+
+/* Excluir Produto */
+.produto-actions .excluir-produto {
+  background: linear-gradient(90deg, #b82b1b, #6b0d0d);
+}
+
+.produto-actions .excluir-produto:hover {
+  background: #8c1d1d;
+  transform: translateY(-2px);
+}
+
+/* ===== Animações ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 600px) {
+  .avaliacao-item { width: 45%; }
+  .card-usuario { padding: 20px; }
+  #btn-cadastrar-produto { max-width: 250px; }
+  .logo { height: 60px; }
+
+  #edit-modal .modal-content,
+  #modal-editar-produto .modal-content {
+    max-width: 95%;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .avaliacao-item { width: 100%; }
+  .avaliacao-item img { height: 120px; }
+  #btn-cadastrar-produto { width: 100%; }
+}

@@ -1,0 +1,386 @@
+/* Estilo geral */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header (portfólio) */
+.portifolio {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(90deg, #1B463B, #248515);
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.logo {
+    margin-left: 10vw;
+    border-radius: 100px;
+    height: 80px;
+    width: auto;
+}
+
+/* Botão entrar/cadastro */
+.entrar {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: none;
+    border-radius: 25px;
+    background: #1B463B;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+.entrar:hover {
+    background: #1b6d11;
+}
+
+/* Ícone do usuário */
+
+.iconeConta {
+  width: 40px;
+  height: auto;
+  margin-left: 900px;
+  cursor: pointer;
+}
+
+
+/* Imagem principal */
+.comida-img-main {
+    width: 100%;
+    height: 350px;
+    display: block;
+    object-fit: cover;
+}
+
+/* Barra de pesquisa */
+.search-container {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.search-box {
+    width: 320px;
+    padding: 10px;
+    border: 2px solid #1B463B;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #1B463B;
+    color: white;
+}
+
+.search-box:focus {
+    border-color: #248515;
+    box-shadow: 0 0 8px rgba(36,133,21,0.4);
+}
+
+.search-box::placeholder {
+    color: #ddd;
+}
+
+.search-button {
+    background-color: #1B463B;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.search-button:hover {
+    background-color: #248515;
+    transform: translateY(-2px);
+}
+
+.img-search {
+    width: 24px;
+    height: auto;
+}
+
+/* Títulos */
+.titulo-main {
+    margin: 30px;
+    color: #145c43;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Listas */
+.lista-proximos,
+.lista-melhores {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin: 0 20px;
+}
+
+.comida-proxima,
+.comida-melhor {
+    height: 200px;
+    border-radius: 10px;
+}
+
+/* Grid de cards */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.card {
+  background: linear-gradient(160deg, #248515, #1B463B);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  width: 220px;
+  text-align: center;
+  padding: 15px;
+  color: white;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+  color: #fff;
+}
+
+.card p {
+  font-size: 14px;
+  margin: 0 0 10px;
+  color: #ffff;
+}
+
+.card .ver-mais {
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  background: #fff;
+  color: #1B463B;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.card .ver-mais:hover {
+  background: #e7f5eb;
+}
+
+/* Filtros */
+.filtros {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+.filtro-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+/* Hide the native checkbox visually but keep it clickable */
+.filtro-btn input {
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2; /* ensure input is clickable */
+}
+
+/* Button look */
+.filtro-btn span {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 25px;
+  background: #145c43;
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  z-index: 1;
+}
+
+/* When checked */
+.filtro-btn input:checked + span {
+  background: #1b6d11;
+  border-color: #145c1e;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+/* Hover effect */
+.filtro-btn:hover span {
+  background: #1b6d11;
+}
+
+.btnvoltar{
+  width: 90px;
+  margin-left: 100px;
+  margin-top: 30px;
+      background: #1b6d11;
+color: #e8f5e9;
+border-radius: 50px;
+height: auto;
+font-size: large;
+}
+
+
+.aplicar-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #1b6d11;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.aplicar-btn:hover {
+  background: #1B463B;
+}
+
+/* Footer */
+.foot {
+    height: auto;
+    background: linear-gradient(90deg, #248515, #1B463B);
+    margin-top: 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.sobre {
+    font-size: large;
+}
+.lista-social {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+.social {
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.social:hover {
+    transform: translateY(-3px);
+}
+/* ===== Responsividade ===== */
+@media (max-width: 900px) {
+  header {
+    padding: 0 15px;
+  }
+
+  header .logo {
+    height: 50px;
+  }
+
+  .card-usuario {
+    max-width: 90%;
+  }
+
+  #btn-cadastrar-produto {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 20px 10px;
+  }
+
+  .avaliacoes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+
+  .avaliacao-item img {
+    height: 130px;
+  }
+
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  header .sair {
+    position: static;
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 400px) {
+  .avaliacoes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .avaliacao-item {
+    padding: 12px;
+  }
+
+  .avaliacao-item img {
+    height: 120px;
+  }
+
+  #btn-cadastrar-produto {
+    width: 100%;
+  }
+}
+
+/* ===== Banner / imagem ===== */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 300px; /* altura padrão */
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* garante que a imagem ocupe todo o espaço */
+}
+

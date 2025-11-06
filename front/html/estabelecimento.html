@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalhes do Estabelecimento</title>
+  <link rel="stylesheet" href="/front/css/estabelecimento.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <section class="portifolio">
+      <a href="home.html"><img src="/front/imgs/logoMenuRestrito.png" alt="" class="logo"></a>
+
+</a>
+    </section>
+  </header>
+    <button class="btnvoltar" onclick="window.location.href='home.html'">← Voltar</button>
+
+  <main class="container my-4">
+
+    <h1 id="nomeEstabelecimento"></h1>
+    <p id="descricaoEstabelecimento"></p>
+    <p><strong>Cidade:</strong> <span id="cidadeEstabelecimento"></span></p>
+    <p><strong>Filtros:</strong> <span id="filtrosEstabelecimento"></span></p>
+    <img id="imagemEstabelecimento" class="img-fluid rounded my-3" alt="Imagem do estabelecimento">
+
+    <h2 class="mt-4">Produtos</h2>
+    <div id="listaProdutos" class="row"></div>
+  </main>
+
+
+  <script src="/front/js/estabelecimento.js">
+  </script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.btnvoltar{
+  width: 90px;
+  margin-left: 100px;
+  margin-top: 30px;
+      background: #1b6d11;
+color: #e8f5e9;
+border-radius: 50px;
+height: auto;
+font-size: large;
+}
+
+
+/* ===== HEADER ===== */
+.portifolio {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(90deg, #1B463B, #248515);
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.logo {
+    margin-left: 10vw;
+    border-radius: 100px;
+    height: 80px;
+    width: auto;
+}
+
+/* Botão entrar/cadastro */
+.entrar {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: none;
+    border-radius: 25px;
+    background: #1B463B;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+.entrar:hover {
+    background: #1b6d11;
+}
+
+/* Ícone do usuário */
+
+.iconeConta {
+  width: 40px;
+  height: auto;
+  margin-left: 900px;
+  cursor: pointer;
+}
+
+/* ===== MAIN ===== */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.produto-card {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  overflow: hidden;
+  gap: 20px;
+}
+
+/* IMAGE */
+.imagem-container {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e9f5ec;
+}
+
+.imagem-produto {
+  max-width: 100%;
+  max-height: 350px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* INFO */
+.produto-info {
+  flex: 1 1 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.titulo-item {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1B463B;
+}
+
+.filtro-texto {
+  font-size: 14px;
+  color: #145c43;
+}
+
+.valor {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1B463B;
+}
+
+.descricao {
+  font-size: 16px;
+  color: #333;
+}
+
+
+
+/* ===== FOOTER ===== */
+.rodape {
+  width: 100%;
+  background: linear-gradient(90deg, #248515, #1B463B);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5vw;
+  flex-wrap: wrap;
+}
+
+.rodape .icons span {
+  margin: 0 5px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 768px) {
+  .produto-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imagem-produto {
+    max-height: 300px;
+  }
+}
+
+@media(max-width: 480px) {
+  .titulo-item { font-size: 22px; }
+  .valor { font-size: 20px; }
+  .descricao { font-size: 15px; }
+  .btn-comprar { width: 100%; }
+}
+
+.logo {
+    margin-left: 10vw;
+    border-radius: 100px;
+    height: 80px;
+    width: auto;
+}

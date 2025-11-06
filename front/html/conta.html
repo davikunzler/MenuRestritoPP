@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Conta</title>
+  <link rel="stylesheet" href="/front/css/conta.css">
+</head>
+<body>
+  <header>
+    <section class="portifolio">
+      <a href="home.html"><img src="/front/imgs/logoMenuRestrito.png" alt="" class="logo"></a>
+      <button id="logout" class="sair">Sair</button>
+      <button id="excluir" class="excluir">Apagar conta</button>
+      <button id="editar" class="editar">Editar conta</button>
+    </section>
+  </header>
+
+  <main>
+        <h1>Bem-vindo(a), <span id="nome-usuario"></span></h1>
+
+    <div class="info-usuario">
+    <p><strong>Email:</strong> <span id="email-usuario"></span></p>
+    <p><strong>Cidade:</strong> <span id="cidade-usuario"></span></p>
+    <p><strong>Senha:</strong> <span id="senha-usuario"></span></p>
+    <p><strong>Filtros:</strong> <span id="filtros-usuario"></span></p>
+      </div>
+    <!-- Só aparece se for estabelecimento -->
+    <div id="descricao-estabelecimento" style="display: none;">
+      <p><strong>Descrição:</strong> <span></span></p>
+    </div>
+
+    <button id="btn-cadastrar-produto" style="display: none;">
+      Cadastrar Produto
+    </button>
+
+    <section class="avaliacoes" id="avaliacoes">
+      <h2>Produtos cadastrados</h2>
+      <p>Carregando...</p>
+    </section>
+  </main>
+
+
+  <script src="/front/js/conta.js"></script>
+</body>
+</html>

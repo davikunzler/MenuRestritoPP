@@ -1,0 +1,120 @@
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== Body ===== */
+body {
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ===== Header (gradient like portfolio) ===== */
+.cabecalho {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(90deg, #1B463B, #248515);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centers logo by default */
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.logo {
+  height: 80px;
+  width: auto;
+  border-radius: 50%;
+}
+
+/* ===== Container ===== */
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+}
+
+/* ===== Form ===== */
+.formulario {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* ===== Title ===== */
+.titulo {
+    color: #1B463B;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+/* ===== Input fields ===== */
+.campo {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background-color: #F0F0F0;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.campo:focus {
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px #24851590;
+}
+
+/* ===== Button ===== */
+.botao {
+    width: 100%;
+    padding: 14px;
+    background-color: #1B463B;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.botao:hover {
+    background-color: #16634e;
+    transform: scale(1.03);
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+    .formulario {
+        padding: 25px;
+    }
+
+    .titulo {
+        font-size: 20px;
+    }
+
+    .campo, .botao {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,252 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+  background: linear-gradient(135deg, #f1f8f4, #d9efe3);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+.portifolio {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(90deg, #1B463B, #248515);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centers logo by default */
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.logo {
+  height: 80px;
+  width: auto;
+  border-radius: 50%;
+}
+
+/* Keep user icon on the right side */
+.iconeConta {
+  position: absolute;
+  right: 180px; /* adjust if needed */
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Entrar button on the right corner */
+.entrar {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 130px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: none;
+  border-radius: 25px;
+  background: #1B463B;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.entrar:hover {
+  background: #1b6d11;
+}
+
+/* ===== FORM CONTAINER ===== */
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+/* ===== FORM ===== */
+#formCadastro1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* ===== INPUTS & SELECT ===== */
+.campo,
+#filtros {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 16px;
+  color: #222;
+  text-align: center;
+  transition: all 0.25s ease-in-out;
+}
+
+.campo:focus,
+#filtros:focus {
+  border-color: #1B463B;
+  outline: none;
+  box-shadow: 0 0 6px rgba(27, 70, 59, 0.3);
+}
+
+#filtros {
+  appearance: none;
+  background: url("data:image/svg+xml;utf8,<svg fill='%231B463B' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 12px center/20px auto;
+  cursor: pointer;
+}
+
+/* ===== FILE UPLOAD ===== */
+input[type="file"] {
+  display: none;
+}
+
+.label-file {
+  width: 100%;
+  padding: 14px;
+  background: #e9f5ec;
+  color: #1b463b;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid #1b463b;
+  transition: all 0.3s ease;
+}
+
+.label-file:hover {
+  background: #1b463b;
+  color: #fff;
+}
+
+/* Preview */
+.preview {
+  margin-top: 10px;
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  object-fit: cover;
+}
+
+/* ===== BUTTON ===== */
+.btnCadastrar {
+  width: 100%;
+  padding: 14px;
+  background-color: #1B463B;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btnCadastrar:hover {
+  background-color: #145134;
+  transform: translateY(-2px);
+}
+
+/* ===== LINK ===== */
+.possuiConta {
+  font-size: 15px;
+  color: #1B463B;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.possuiConta:hover {
+  color: #248515;
+}
+
+/* ===== FOOTER ===== */
+.foot {
+  height: auto;
+  background: linear-gradient(90deg, #248515, #1B463B);
+  margin-top: 40px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.lista-social {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.social {
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.social:hover {
+  transform: translateY(-3px);
+}
+
+.sobre {
+  font-size: large;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .entrar {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  .iconeConta {
+    margin-left: auto;
+    margin-right: 20px;
+    width: 35px;
+  }
+
+  #formCadastro1 {
+    padding: 20px;
+  }
+
+  .campo, .btnCadastrar {
+    font-size: 15px;
+  }
+}
+
+.titulo1{
+  margin-bottom: 10px;
+  color: #1B463B;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
